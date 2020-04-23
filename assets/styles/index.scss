@@ -1,1 +1,39 @@
 @import '~bootstrap/scss/bootstrap';
+
+$alt-color: $cyan;
+$body-bg-color: $gray-200;
+$font-color: $light;
+
+body {
+  background-color: $body-bg-color;
+}
+.container{
+  width:60%;
+}
+
+.box {
+  align-items: center;
+  background-color: $secondary;
+  border: 1px solid $white;
+  color: $font-color;
+  display: flex;
+  height: 200px;
+  width: 200px;
+  justify-content: center;
+}
+
+.alt-color {
+  background-color: $alt-color;
+}
+.button {
+  display: flex;
+  justify-content: center;
+}
+#im1 {
+  position:absolute;
+  z-index: 1
+}
+#im2 {
+  position: absolute;
+  z-index: 2
+}

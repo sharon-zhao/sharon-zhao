@@ -13,5 +13,51 @@
     </head>
     <body>
       <h1>Tic-tac-toe</h1>
+      <div id="message"></div>
+     <div id="unauthenticated">
+      <form id="sign-up">
+            <input required type="email" placeholder="User Email" name="credentials[email]">
+         <div><input required type="password" placeholder="User password" name="credentials[password]"></div>
+             <input required type="password" placeholder="User password again" name="credentials[password_confirmation]">
+         <div><button type="submit">Sign Up</button></div>
+          </form>
+
+          <form id="sign-in">
+                <input required type="email" placeholder="User Email" name="credentials[email]">
+             <div><input required type="password" placeholder="User password" name="credentials[password]"></div>
+
+             <div><button type="submit">Sign In</button></div>
+              </form>
+           </div>
+           <div id="authenticated">
+              <form id="change-password">
+                    <input required type="text" placeholder="old password" name="passwords[old]">
+              <div><input required type="text" placeholder="new password" name="passwords[new]"></div>
+
+              <div><button type="submit">Change password</button></div>
+              </form>
+
+                <!-- <div id="unauthenticated"> -->
+              <form id="sign-out">
+                     <div><button type="submit">Sign out</button></div>
+                   </form>
+                 </div>
+
+      <div class="container">
+        <h1>Tic-tac-toe</h1>
+        <div class="row board" >
+
+          <div id="1" class="col-4 box alt-color"><img class= "im1" src="X.png" width="198" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
+          <div id="2" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
+          <div id="3" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
+          <div id="4" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
+          <div id="5" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
+          <div id="6" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
+          <div id="7" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
+          <div id="8" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
+          <div id="9" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
+        </div>
+      </div>
+      <div><button id="button" type="button" class="btn btn-primary btn-lg">Start</button></div>
     </body>
 </html>
