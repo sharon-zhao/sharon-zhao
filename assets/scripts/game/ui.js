@@ -5,21 +5,38 @@ $('.row').show()
 $('.im2').hide()
 $('.im1').hide()
 
-
 const gamePlayOn = function(data){
-  $('#message').text('X Win')
+  $('h2').text('game on')
   $('#message').removeClass()
   $('#message').addClass('Success')
+  text1.hide()
   // create a variable to hold all the books:
- console.log(`gameSuccess ran. Data is: ${data}`)
+ console.log(`gamePlayOn ran. Data is: ${data}`)
 }
 
 const gamePlayOff = function(){
+  $('h2').text('Game play failed')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  // create a variable to hold all the books:
+ // console.log(`gameFail ran. error is: ${error}`)
+}
+
+const restartGameOn = function(){
+  $('.im2').hide()
+  $('.im1').hide()
+  const text1=$('h2').text("Restart")
+  text1.show()
+
 
 }
 
+const restartGameOff = function(){
+
+}
 
 module.exports = {
   gamePlayOn,
-  gamePlayOff
+  gamePlayOff,
+  restartGameOn
 }

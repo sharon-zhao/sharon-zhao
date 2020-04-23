@@ -42,9 +42,10 @@
                      <div><button type="submit">Sign out</button></div>
                    </form>
                  </div>
-
+<div id="game">
       <div class="container">
         <h1>Tic-tac-toe</h1>
+        <h2></h2>
         <div class="row board" >
 
           <div id="1" class="col-4 box alt-color"><img class= "im1" src="X.png" width="198" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
@@ -58,6 +59,10 @@
           <div id="9" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
         </div>
       </div>
-      <div><button id="button" type="button" class="btn btn-primary btn-lg">Start</button></div>
+      <div><h5>X Win</h5><input class="show-board" required type="text" placeholder="You win" ></div>
+      <div><h5>O Win</h5><input class="show-board" required type="text" placeholder="You win" ></div>
+      <div><h5>Draw</h5><input class="show-board" required type="text" placeholder="Draw" ></div>
+      <button id="start" type="button" class="btn btn-primary btn-lg">Start</button>
+</div>
     </body>
 </html>

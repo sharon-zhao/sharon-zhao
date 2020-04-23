@@ -1,7 +1,8 @@
 'use strict'
 
 const store = require('../store')
-
+// $('#game').hide()
+$('#authenticated').hide()
 const signUpSuccess = function (data){
 
    $('#message').text('Signed up Successfully')
@@ -34,6 +35,7 @@ const signInSuccess = function (data){
    store.user = data.user
    $('#authenticated').show()
    $('#unauthenticated').hide()
+   $('#game').show()
    // loop through the data and create html for each book:
    // $('form').triger('reset')
 }
