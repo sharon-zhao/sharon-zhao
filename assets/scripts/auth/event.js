@@ -2,6 +2,10 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const events = require('../game/event')
+const uigame = require('../game/ui')
+const apigame = require('../game/api')
+
 
 const onSignUp = function(event){
   //Prevent the page from refresh
@@ -16,6 +20,7 @@ const onSignUp = function(event){
 
 const onSignIn = function(event){
   //Prevent the page from refresh
+
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
@@ -23,6 +28,7 @@ const onSignIn = function(event){
   api.signIn(formData)
    .then(ui.signInSuccess)
    .catch(ui.signInFailure)
+   console.log(event)
 }
 
 const onChangePassword = function(event){
@@ -39,10 +45,11 @@ const onChangePassword = function(event){
 const onSignOut = function(event){
   //Prevent the page from refresh
   event.preventDefault()
-
   api.signOut()
    .then(ui.signOutSuccess)
    .catch(ui.signOurFailure)
+  events.quitGame()
+
 }
 
 

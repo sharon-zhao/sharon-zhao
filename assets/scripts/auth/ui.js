@@ -75,7 +75,7 @@ const changePasswordFailure = function (error){
 }
 
 const signOutSuccess = function (data){
-
+   $('#game').hide()
    $('#message').text('sign out in Successfully')
    $('#message').removeClass()
    $('#message').addClass('Success')
