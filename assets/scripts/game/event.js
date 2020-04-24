@@ -8,12 +8,13 @@ let turn = 1
 let x_win = 0
 let o_win = 0
 let draw = 0
+
 const onGame = function(event){
   const image1=$(event.target).children(".im1")
   const image2=$(event.target).children(".im2")
   const text1=$('h2').text("Restart")
   text1.hide()
-  if (turn == 1 ){
+  if (turn === 1 ){
    image1.show()
    turn = 0
  } else {
@@ -23,115 +24,133 @@ const onGame = function(event){
 
 }
 
-let gameBoard = [[0,0,0],[0,0,0],[0,0,0]]
+let gameBoard = [
+  '', '', '', '', '', '', '', '', ''
+]
+
+let gameOver = false
 
 const switchPlayer = function(event){
+  let clickResult = $(event.target).attr('id')
 
- if (turn ==1 && $(event.target).attr('id') == 1){
-   gameBoard[0][0]=1 } else if(turn == 0 && $(event.target).attr('id') == 1)
-   {gameBoard[0][0]=2}
+ // fill the board
+ if (turn === 1 && clickResult === '1'){
+   gameBoard[0]= 1 }
+ else if(turn === 0 && clickResult === '1'){
+   gameBoard[0]=2
+ }
+ else if(turn === 1 && clickResult === '2'){
+   gameBoard[1] = 1}
+ else if(turn === 0 && clickResult === '2')
+   {gameBoard[1]=2 }
+ else if(turn === 1 && clickResult === '3'){
+   gameBoard[2] = 1}
+ else if(turn === 0 && clickResult === '3')
+   {gameBoard[2]=2}
+ else if(turn === 1 && clickResult === '4'){
+   gameBoard[3] = 1}
+ else if(turn === 0 && clickResult === '4')
+   {gameBoard[3]=2}
+ else if(turn === 1 && clickResult === '5'){
+   gameBoard[4] = 1}
+ else if(turn === 0 && clickResult === '5')
+   {gameBoard[4]=2}
+ else if(turn === 1 && clickResult === '6'){
+   gameBoard[5]= 1}
+ else if(turn === 0 && clickResult === '6')
+   {gameBoard[5]=2}
+ else if(turn === 1 && clickResult === '7'){
+   gameBoard[6]= 1}
+ else if(turn === 0 && clickResult === '7')
+   {gameBoard[6]=2}
+ else if(turn === 1 && clickResult === '8'){
+   gameBoard[7]= 1}
+ else if(turn === 0 && clickResult === '8')
+   {gameBoard[7]=2}
+ else if (turn === 1 && clickResult === '9'){
+   gameBoard[8]= 1}
+ else if(turn === 0 && clickResult === '9')
+   {gameBoard[8]=2}
 
- if(turn == 1 && $(event.target).attr('id') == 2){
-   gameBoard[0][1] = 1} else if(turn == 0 && $(event.target).attr('id') == 2)
-   {gameBoard[0][1]=2 }
+ // check the winner
+if (!gameOver) {
 
- if(turn == 1 && $(event.target).attr('id') == 3){
-   gameBoard[0][2] = 1} else if(turn == 0 && $(event.target).attr('id') == 3)
-   {gameBoard[0][2]=2}
-
- if(turn == 1 && $(event.target).attr('id') == 4){
-   gameBoard[1][0] = 1} else if(turn == 0 && $(event.target).attr('id') == 4)
-   {gameBoard[1][0]=2}
-
-
- if(turn == 1 && $(event.target).attr('id') == 5){
-   gameBoard[1][1] = 1} else if(turn == 0 && $(event.target).attr('id') == 5)
-   {gameBoard[1][1]=2}
-
- if(turn == 1 && $(event.target).attr('id') == 6){
-   gameBoard[1][2] = 1} else if(turn == 0 && $(event.target).attr('id') == 6)
-   {gameBoard[1][2]=2}
-
- if(turn == 1 && $(event.target).attr('id') == 7){
-   gameBoard[2][0] = 1} else if(turn == 0 && $(event.target).attr('id') == 7)
-   {gameBoard[2][0]=2}
-
- if(turn == 1 && $(event.target).attr('id') == 8){
-   gameBoard[2][1] = 1} else if(turn == 0 && $(event.target).attr('id') == 8)
-   {gameBoard[2][1]=2}
-
- if(turn == 1 && $(event.target).attr('id') == 9){
-   gameBoard[2][2] = 1} else if(turn == 0 && $(event.target).attr('id') == 9)
-   {gameBoard[2][2]=2}
-
-if (gameBoard[0][0]==1 && gameBoard[0][1]==1 && gameBoard[0][2]==1 ||
-  gameBoard[1][0]==1 && gameBoard[1][1]==1 && gameBoard[1][2]==1 ||
-  gameBoard[2][0]==1 && gameBoard[2][1]==1 && gameBoard[2][2]==1 ||
-  gameBoard[0][0]==1 && gameBoard[1][0]==1 && gameBoard[2][0]==1 ||
-  gameBoard[0][1]==1 && gameBoard[1][1]==1 && gameBoard[2][1]==1 ||
-  gameBoard[0][2]==1 && gameBoard[1][2]==1 && gameBoard[2][2]==1||
-  gameBoard[0][0]==1 && gameBoard[1][1]==1 && gameBoard[2][2]==1||
-  gameBoard[0][2]==1 && gameBoard[1][1]==1 && gameBoard[2][0]==1) {
+if (gameBoard[0]===1 && gameBoard[1]===1 && gameBoard[2]===1 ||
+  gameBoard[3]===1 && gameBoard[4]===1 && gameBoard[5]===1 ||
+  gameBoard[6]===1 && gameBoard[7]===1 && gameBoard[8]===1 ||
+  gameBoard[0]===1 && gameBoard[3]===1 && gameBoard[6]===1 ||
+  gameBoard[1]===1 && gameBoard[4]===1 && gameBoard[7]===1 ||
+  gameBoard[2]===1 && gameBoard[5]===1 && gameBoard[8]===1||
+  gameBoard[0]===1 && gameBoard[4]===1 && gameBoard[8]===1||
+  gameBoard[2]===1 && gameBoard[4]===1 && gameBoard[6]===1) {
   // oWin++
-   console.log("O is winning")
+
    o_win++
-   console.log(o_win)
+   console.log("O is winning "+ o_win)
+   gameOver = true
+   ui.oWin(o_win)
+   }
 
-}
+else if (gameBoard[0]===2 && gameBoard[1]===2 && gameBoard[2]===2 ||
+  gameBoard[3]===2 && gameBoard[4]===2 && gameBoard[5]===2 ||
+  gameBoard[6]===2 && gameBoard[7]===2 && gameBoard[8]===2 ||
+  gameBoard[0]===2 && gameBoard[3]===2 && gameBoard[6]===2 ||
+  gameBoard[1]===2 && gameBoard[4]===2 && gameBoard[7]===2 ||
+  gameBoard[2]===2 && gameBoard[5]===2 && gameBoard[8]===2 ||
+  gameBoard[0]===2 && gameBoard[4]===2 && gameBoard[8]===2 ||
+  gameBoard[2]===2 && gameBoard[4]===2 && gameBoard[6]===2){
 
-else if (gameBoard[0][0]==2 && gameBoard[0][1]==2 && gameBoard[0][2]==2 ||
-  gameBoard[1][0]==2 && gameBoard[1][1]==2 && gameBoard[1][2]==2 ||
-  gameBoard[2][0]==2 && gameBoard[2][1]==2 && gameBoard[2][2]==2 ||
-  gameBoard[0][0]==2 && gameBoard[1][0]==2 && gameBoard[2][0]==2 ||
-  gameBoard[0][1]==2 && gameBoard[1][1]==2 && gameBoard[2][1]==2 ||
-  gameBoard[0][2]==2 && gameBoard[1][2]==2 && gameBoard[2][2]==2||
-  gameBoard[0][0]==2 && gameBoard[1][1]==2 && gameBoard[2][2]==2||
-  gameBoard[0][2]==2 && gameBoard[1][1]==2 && gameBoard[2][0]==2){
-  // xWin++
-    console.log("X is winning")
     x_win++
-    console.log(x_win)
-$('.board').on('click',function(){$('.show-board').show()})
-
+    console.log("X is winning "+x_win)
+    gameOver = true
+   ui.xWin(x_win)
 }
-else if (gameBoard[0][0]!=0 && gameBoard[0][1]!=0 && gameBoard[0][2]!=0 &&
-    gameBoard[1][0]!=0 && gameBoard[1][1]!=0 && gameBoard[1][2]!=0 && gameBoard[2][0]!=0 &&
-    gameBoard[2][1]!=0 &&gameBoard[2][2]!=0 )
+else if (gameBoard[0]!=='' && gameBoard[1]!=='' && gameBoard[2]!=='' &&
+    gameBoard[3]!=='' && gameBoard[4]!=='' && gameBoard[5]!=='' && gameBoard[6]!=='' &&
+    gameBoard[7]!=='' &&gameBoard[8]!=='' )
     {
-      console.log("It is a draw")
       draw++
-      console.log(draw)
+      console.log("It is a draw")
+      gameOver = true
+      ui.drawWin(draw)
+    }
+
+    }
 
 }
-}
+
+
 const reStart = function(){
   console.log("restart")
   // $('.im2').hide()
   // $('.im1').hide()
-  gameBoard = [[0,0,0],[0,0,0],[0,0,0]]
+  gameBoard = [
+  '', '', '',
+  '', '', '',
+  '', '', ''
+]
 ui.restartGameOn()
 turn = 1
+gameOver = false
 
-event.preventDefault()
-const form = event.target
-const formData = getFormFields(form)
-console.log(formData)
-api.playGame(formData)
- .then(ui.restartGameOn)
- .catch(ui.restartGameOff)
 }
 
 const quitGame = function() {
   console.log("quit")
-  x_win = 0
-  o_win = 0
-  draw = 0
-  gameBoard = [[0,0,0],[0,0,0],[0,0,0]]
+
+  gameBoard = [
+  '', '', '',
+  '', '', '',
+  '', '', ''
+]
   ui.restartGameOn()
   turn = 1
+
 }
 
+const resetNumber = function(){
 
+}
 
 module.exports = {
   onGame,

@@ -5,21 +5,27 @@ $('.row').show()
 $('.im2').hide()
 $('.im1').hide()
 
-const gamePlayOn = function(data){
-const otext= $('h2').text('O is winning:'+oWin)
-  otext.show()
-  text1.hide()
+const xWin = function(x_win){
+const xtext= $('.show-X').attr("value",x_win)
+  xtext.show()
+
   console.log("O is winning:"+ oWin)
-  // create a variable to hold all the books:
- console.log(`gamePlayOn ran. Data is: ${data}`)
+
+
 }
 
-const gamePlayOff = function(){
-  $('h2').text('Game play failed')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
-  // create a variable to hold all the books:
- // console.log(`gameFail ran. error is: ${error}`)
+const oWin = function(o_win){
+  const otext= $('.show-O').attr("value",o_win)
+    otext.show()
+
+    console.log("O is winning:"+ oWin)
+}
+
+const drawWin = function(draw){
+  const dtext= $('.show-D').attr("value",draw)
+    dtext.show()
+
+    console.log("O is winning:"+ oWin)
 }
 
 const restartGameOn = function(){
@@ -36,7 +42,8 @@ const restartGameOff = function(){
 }
 
 module.exports = {
-  gamePlayOn,
-  gamePlayOff,
+  xWin,
+  oWin,
+  drawWin,
   restartGameOn
 }
