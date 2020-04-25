@@ -9,26 +9,42 @@ let x_win = 0
 let o_win = 0
 let draw = 0
 let gameOver = false
+
+let gameBoard = [
+  '', '', '', '', '', '', '', '', 'test'
+]
 const choosePlayer = function(event){
-  console.log($(event.target).attr('id'))
-  if ($(event.target).attr('id') === "x"){
+  // console.log($(event.target).attr('id'))
+  // let games = api.createGame().done()
+
+  let player = $(event.target).attr('id')
+  if (player === "x") {
     turn = 1
-  } else if($(event.target).attr('id') === "o"){
-    turn = 0}
+    ui.informationX()
+  } else if(player === "o") {
+    turn = 0
+    ui.informationO()
+  }
 }
 
 const switchPlayer= function(event){
   const image1=$(event.target).children(".im1")
   const image2=$(event.target).children(".im2")
+  api.createGame()
+
+  const index = $(event.target).data('id')
+  console.log(index)
   const text1=$('h2').text("Restart")
   text1.hide()
 
   if (gameOver === false) {
     if (turn === 1 ){
      image1.show()
+     ui.informationO()
      turn = 0
    } else {
     image2.show()
+    ui.informationX()
     turn = 1
    }
   }
@@ -38,9 +54,6 @@ const switchPlayer= function(event){
 
 }
 
-let gameBoard = [
-  '', '', '', '', '', '', '', '', ''
-]
 
 
 const onGame = function(event){
@@ -99,7 +112,6 @@ if (gameBoard[0]===1 && gameBoard[1]===1 && gameBoard[2]===1 ||
   // oWin++
 
    o_win++
-   console.log("O is winning "+ o_win)
    gameOver = true
    ui.oWin(o_win)
    }
@@ -114,7 +126,6 @@ else if (gameBoard[0]===2 && gameBoard[1]===2 && gameBoard[2]===2 ||
          gameBoard[2]===2 && gameBoard[4]===2 && gameBoard[6]===2){
 
     x_win++
-    console.log("X is winning "+x_win)
     gameOver = true
     ui.xWin(x_win)
 }
@@ -123,7 +134,6 @@ else if (gameBoard[0]!=='' && gameBoard[1]!=='' && gameBoard[2]!=='' &&
          gameBoard[7]!=='' &&gameBoard[8]!=='' )
     {
       draw++
-      console.log("It is a draw")
       gameOver = true
       ui.drawWin(draw)
     }
@@ -133,10 +143,6 @@ else if (gameBoard[0]!=='' && gameBoard[1]!=='' && gameBoard[2]!=='' &&
 }
 
 const resetScore = function(){
-  console.log("resetScore")
-  // $('.show-X').val("")
-  // $('.show-O').val("")
-  // $('.show-D').val("")
   x_win = 0
   o_win = 0
   draw = 0
@@ -145,24 +151,23 @@ const resetScore = function(){
   ui.oWin(o_win)
   ui.drawWin(draw)
   reStart()
+  ui.informationX()
 }
 
 const reStart = function(){
-  // console.log("restart")
-// ui.restartGameOff()
   gameBoard = [
   '', '', '',
   '', '', '',
   '', '', ''
 ]
 ui.restartGameOn()
-turn = 1
+// turn = 1
 gameOver = false
 
 }
 
 const quitGame = function() {
-  console.log("quit")
+
   gameBoard = [
   '', '', '',
   '', '', '',

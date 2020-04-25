@@ -26,9 +26,9 @@ const changePassword = function(data){
    url:config.apiUrl + '/change-password/',
    method: 'PATCH',
      data,
-     headers:{
-       Authorization:'Token token=' + store.user.token
-     }
+   headers:{
+     Authorization:'Token token=' + store.user.token
+   }
      //OR data
   })
 }

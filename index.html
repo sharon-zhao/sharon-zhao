@@ -47,8 +47,8 @@ minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
 <div id="game">
       <div class="container">
         <div class = "selector"><button id = "x" type="button" style="height:70px; width:70px; margin-top: 20px; background:pink;">X</button><button id = "o" type="button" style="height:70px; width:70px; margin-top: 20px; background:purple;">O</button></div>
+
         <button id="score" type="button" style="font:30px; color:grey; height:50px; width:150px;">Reset Score</button>
-        <h2></h2>
         <div class="row h-100 board" >
 
           <div id="1" class="col-4 col-sm-30% box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
@@ -63,10 +63,13 @@ minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
         </div>
       </div>
       <div class="number">
-      <div><h5>X Win</h5><input class="show-X" required type="text" placeholder="You win" style="width:300px;height:40px;"></div>
-    <div><h5>O Win</h5><input class="show-O" required type="text" placeholder="You win" style="width:300px;height:40px;"></div>
-      <div><h5>Draw</h5><input class="show-D" required type="text" placeholder="Draw" style="width:300px;height:40px;"></div>
-      <button id="start" type="button" class="btn btn-primary btn-lg">Start</button></div>
+        <h3 id = "info"></h3>
+        <h2></h2>
+      <div><h5>X Win</h5><input class="show-X" required type="text" placeholder="0" style="width:300px;height:40px;"></div>
+    <div><h5>O Win</h5><input class="show-O" required type="text" placeholder="0" style="width:300px;height:40px;"></div>
+      <div><h5>Draw</h5><input class="show-D" required type="text" placeholder="0" style="width:300px;height:40px;"></div>
+      <button id="start" type="button" class="btn btn-primary btn-lg">Start</button>
+    </div>
 </div>
 
     </body>

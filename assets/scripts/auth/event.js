@@ -23,6 +23,7 @@ const onSignIn = function(event){
 
   event.preventDefault()
   const form = event.target
+  console.log(form)
   const formData = getFormFields(form)
   console.log(formData)
   api.signIn(formData)
