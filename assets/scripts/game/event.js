@@ -8,19 +8,27 @@ let turn = 1
 let x_win = 0
 let o_win = 0
 let draw = 0
+let gameOver = false
 
-const onGame = function(event){
+
+const switchPlayer= function(event){
   const image1=$(event.target).children(".im1")
   const image2=$(event.target).children(".im2")
   const text1=$('h2').text("Restart")
   text1.hide()
-  if (turn === 1 ){
-   image1.show()
-   turn = 0
- } else {
-  image2.show()
-  turn = 1
- }
+
+  if (gameOver === false) {
+    if (turn === 1 ){
+     image1.show()
+     turn = 0
+   } else {
+    image2.show()
+    turn = 1
+   }
+  }
+  else {
+    return
+  }
 
 }
 
@@ -28,9 +36,8 @@ let gameBoard = [
   '', '', '', '', '', '', '', '', ''
 ]
 
-let gameOver = false
 
-const switchPlayer = function(event){
+const onGame = function(event){
   let clickResult = $(event.target).attr('id')
 
  // fill the board
@@ -117,6 +124,8 @@ else if (gameBoard[0]!=='' && gameBoard[1]!=='' && gameBoard[2]!=='' &&
 
     }
 
+
+
 }
 
 
@@ -148,13 +157,17 @@ const quitGame = function() {
 
 }
 
-const resetNumber = function(){
-
+const resetScore = function(){
+  x_win = 0
+  o_win = 0
+  draw = 0
+  ui.resetGame
 }
 
 module.exports = {
   onGame,
   switchPlayer,
   reStart,
-  quitGame
+  quitGame,
+  resetScore
 }

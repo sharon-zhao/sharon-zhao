@@ -8,20 +8,89 @@ body {
   background-color: $body-bg-color;
 }
 .container{
-  width:60%;
+  height: 100%;
+  width:100%;
 }
+.board {
 
+  margin: 0 auto;
+  max-height: calc(100vh - 75px);
+  max-width: calc(100vh - 75px);
+  background: url('public/lala.jpg') no-repeat center center;
+}
+.score {
+  margin-right: auto;
+}
 .box {
+  min-height: calc(100% / 3);
+  height: 20vh;
+  width: 20vh;
   align-items: center;
-  background-color: $secondary;
-  border: 1px solid $white;
+  // background-color: $secondary;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
   color: $font-color;
   display: flex;
-  height: 200px;
-  width: 200px;
+  justify-content: center;
+  &:nth-child(3n){
+    border-right: 0;
+  }
+  &:nth-last-child(-1n + 3){
+    border-bottom: 0;
+  }
+}
+
+h1 {
+  width:100%;
+  display:flex;
+  line-height:1.5em;
+  overflow:visible;
+  font-size:80px;
+  text-shadow:#f3f3f3 1px 1px 0px, #b2b2b2 1px 2px 0;
   justify-content: center;
 }
 
+#game {
+display: flex;
+flex-wrap: wrap;
+position: relative;
+flex-direction: row;
+
+}
+.number {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-right: 10%;
+  margin-top: 100px;
+  align-self: flex-start;
+  // margin-left: 80%;
+}
+#message{
+  margin-left: 20px;
+  color: yellow;
+  font-weight: bold;
+  font-size:30px;
+
+}
+
+input::-webkit-input-placeholder {
+    /* 修改字体颜色 */
+    color: #000080;
+    /* 修改字号，默认继承input */
+    font-size: 20px;
+    /* 设置背景色 */
+    // background: #8ac6d1;
+    text-indent: 10px;
+}
+#unauthenticated {
+  margin-left: 20px;
+}
+
+#authenticated {
+  margin-left: 20px;
+}
 .alt-color {
   background-color: $alt-color;
 }
@@ -31,9 +100,13 @@ body {
 }
 #im1 {
   position:absolute;
-  z-index: 1
+  z-index: 1;
+  height:20vh;
+  width: 20vh;
 }
 #im2 {
   position: absolute;
-  z-index: 2
+  z-index: 2;
+  height:20vh;
+  width: 20vh;
 }

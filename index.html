@@ -16,53 +16,54 @@
       <div id="message"></div>
      <div id="unauthenticated">
       <form id="sign-up">
-            <input required type="email" placeholder="User Email" name="credentials[email]">
-         <div><input required type="password" placeholder="User password" name="credentials[password]"></div>
-             <input required type="password" placeholder="User password again" name="credentials[password_confirmation]">
-         <div><button type="submit">Sign Up</button></div>
+            <input required type="email" placeholder="User Email" name="credentials[email]" style="width:300px;height:40px;">
+         <div><input required type="password" placeholder="User password" name="credentials[password]" style="width:300px;height:40px;"></div>
+             <input required type="password" placeholder="User password again" name="credentials[password_confirmation]" style="width:300px;height:40px;">
+         <div><button type="submit" class="btn btn-info">Sign Up</button></div>
           </form>
 
           <form id="sign-in">
-                <input required type="email" placeholder="User Email" name="credentials[email]">
-             <div><input required type="password" placeholder="User password" name="credentials[password]"></div>
+                <input required type="email" placeholder="User Email" name="credentials[email]" style="width:300px;height:40px;">
+             <div><input required type="password" placeholder="User password" name="credentials[password]" style="width:300px;height:40px;"></div>
 
-             <div><button type="submit">Sign In</button></div>
+             <div><button type="submit" class="btn btn-info">Sign In</button></div>
               </form>
            </div>
            <div id="authenticated">
               <form id="change-password">
-                    <input required type="text" placeholder="old password" name="passwords[old]">
-              <div><input required type="text" placeholder="new password" name="passwords[new]"></div>
+                    <input required type="text" placeholder="old password" name="passwords[old]" style="width:300px;height:40px;">
+              <div><input required type="text" placeholder="new password" name="passwords[new]" style="width:300px;height:40px;"></div>
+             <div><button type="submit" class="btn btn-info">Change Password</button></div>
 
-              <div><button type="submit">Change password</button></div>
               </form>
 
                 <!-- <div id="unauthenticated"> -->
               <form id="sign-out">
-                     <div><button type="submit">Sign out</button></div>
+                     <div><button type="submit" class="btn btn-info">Sign Out</button></div>
                    </form>
                  </div>
 <div id="game">
       <div class="container">
-        <h1>Tic-tac-toe</h1>
+        <button class="score" type="button" style="font:20px; color:grey; height:35px; width:150px;">Reset Score</button>
         <h2></h2>
-        <div class="row board" >
+        <div class="row h-100 board" >
 
-          <div id="1" class="col-4 box alt-color"><img class= "im1" src="X.png" width="198" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
-          <div id="2" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
-          <div id="3" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
-          <div id="4" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
-          <div id="5" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
-          <div id="6" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
-          <div id="7" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
-          <div id="8" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
-          <div id="9" class="col-4 box alt-color"><img class= "im1" src="X.png" width="195" height="190"><img class= "im2" src="O.png" width="198" height="190"></div>
+          <div id="1" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="2" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="3" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="4" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="5" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="6" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="7" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="8" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="9" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
         </div>
       </div>
-      <div><h5>X Win</h5><input class="show-X" required type="text" placeholder="You win" ></div>
-    <div><h5>O Win</h5><input class="show-O" required type="text" placeholder="You win" ></div>
-      <div><h5>Draw</h5><input class="show-D" required type="text" placeholder="Draw" ></div>
-      <button id="start" type="button" class="btn btn-primary btn-lg">Start</button>
+      <div class="number">
+      <div><h5>X Win</h5><input class="show-X" required type="text" placeholder="You win" style="width:300px;height:40px;"></div>
+    <div><h5>O Win</h5><input class="show-O" required type="text" placeholder="You win" style="width:300px;height:40px;"></div>
+      <div><h5>Draw</h5><input class="show-D" required type="text" placeholder="Draw" style="width:300px;height:40px;"></div>
+      <button id="start" type="button" class="btn btn-primary btn-lg">Start</button></div>
 </div>
 
     </body>

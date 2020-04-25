@@ -41,9 +41,19 @@ const restartGameOff = function(){
 
 }
 
+const resetGame = function(){
+  tx1=$('.show-X').attr("value",0)
+  tx2=$('.show-O').attr("value",0)
+  tx3=$('.show-D').attr("value",0)
+  tx1.show()
+  tx2.show()
+  tx3.show()
+}
+
 module.exports = {
   xWin,
   oWin,
   drawWin,
-  restartGameOn
+  restartGameOn,
+  resetGame
 }
