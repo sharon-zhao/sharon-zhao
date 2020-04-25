@@ -7,24 +7,29 @@ $font-color: $light;
 body {
   background-color: $body-bg-color;
 }
-.container{
-  height: 100%;
-  width:100%;
-}
+// .container{
+//   height: 70em;
+//   width:80em;
+// }
 .board {
 
   margin: 0 auto;
-  max-height: calc(100vh - 75px);
-  max-width: calc(100vh - 75px);
+  // max-height: calc(100vh - 5em);
+  // max-width: calc(100vh - 5em);
+
   background: url('public/lala.jpg') no-repeat center center;
 }
+.selector {
+  display: flex;
+  justify-content: center;
+}
 .score {
-  margin-right: auto;
+  margin-right: 0 auto;
 }
 .box {
   min-height: calc(100% / 3);
-  height: 20vh;
-  width: 20vh;
+  height: 15em;
+  width: 15em;
   align-items: center;
   // background-color: $secondary;
   border-bottom: 1px solid black;
@@ -45,7 +50,7 @@ h1 {
   display:flex;
   line-height:1.5em;
   overflow:visible;
-  font-size:80px;
+  font-size:5em;
   text-shadow:#f3f3f3 1px 1px 0px, #b2b2b2 1px 2px 0;
   justify-content: center;
 }
@@ -63,15 +68,16 @@ flex-direction: row;
   flex-direction: column;
   flex-wrap: wrap;
   margin-right: 10%;
-  margin-top: 100px;
+  margin-top: 6.25em;
+  margin-left: 1.25em;
   align-self: flex-start;
   // margin-left: 80%;
 }
 #message{
-  margin-left: 20px;
-  color: yellow;
+  margin-left: 1.25em;
+  color: red;
   font-weight: bold;
-  font-size:30px;
+  font-size:1.875em;
 
 }
 
@@ -79,17 +85,19 @@ input::-webkit-input-placeholder {
     /* 修改字体颜色 */
     color: #000080;
     /* 修改字号，默认继承input */
-    font-size: 20px;
+    font-size: 1.25em;
     /* 设置背景色 */
     // background: #8ac6d1;
-    text-indent: 10px;
+    text-indent: 0.625em;
+    outline-style: none ;
+    border-radius: 1em;
 }
 #unauthenticated {
-  margin-left: 20px;
+  margin-left: 1.25em;
 }
 
 #authenticated {
-  margin-left: 20px;
+  margin-left: 1.25em;
 }
 .alt-color {
   background-color: $alt-color;

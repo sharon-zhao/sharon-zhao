@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,
+minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <head>
       <title>Example</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,47 +18,48 @@
       <div id="message"></div>
      <div id="unauthenticated">
       <form id="sign-up">
-            <input required type="email" placeholder="User Email" name="credentials[email]" style="width:300px;height:40px;">
-         <div><input required type="password" placeholder="User password" name="credentials[password]" style="width:300px;height:40px;"></div>
-             <input required type="password" placeholder="User password again" name="credentials[password_confirmation]" style="width:300px;height:40px;">
+            <input required type="email" placeholder="User Email" name="credentials[email]" style="width:300px;height:40px; margin-bottom:15px;">
+         <div><input required type="password" placeholder="User password" name="credentials[password]" style="width:300px;height:40px; margin-bottom:15px;"></div>
+             <input required type="password" placeholder="User password again" name="credentials[password_confirmation]" style="width:300px;height:40px; margin-bottom:15px;">
          <div><button type="submit" class="btn btn-info">Sign Up</button></div>
           </form>
 
           <form id="sign-in">
-                <input required type="email" placeholder="User Email" name="credentials[email]" style="width:300px;height:40px;">
-             <div><input required type="password" placeholder="User password" name="credentials[password]" style="width:300px;height:40px;"></div>
+                <input required type="email" placeholder="User Email" name="credentials[email]" style="width:300px;height:40px; margin-top: 30px; margin-bottom:15px;">
+             <div><input required type="password" placeholder="User password" name="credentials[password]" style="width:300px;height:40px; margin-bottom:15px;"></div>
 
              <div><button type="submit" class="btn btn-info">Sign In</button></div>
               </form>
            </div>
            <div id="authenticated">
               <form id="change-password">
-                    <input required type="text" placeholder="old password" name="passwords[old]" style="width:300px;height:40px;">
-              <div><input required type="text" placeholder="new password" name="passwords[new]" style="width:300px;height:40px;"></div>
+                    <input required type="text" placeholder="old password" name="passwords[old]" style="width:300px;height:40px; margin-bottom:15px;">
+              <div><input required type="text" placeholder="new password" name="passwords[new]" style="width:300px;height:40px; margin-bottom:15px;"></div>
              <div><button type="submit" class="btn btn-info">Change Password</button></div>
 
               </form>
 
                 <!-- <div id="unauthenticated"> -->
               <form id="sign-out">
-                     <div><button type="submit" class="btn btn-info">Sign Out</button></div>
+                     <div><button type="submit" class="btn btn-info" style="margin-top:20px;">Sign Out</button></div>
                    </form>
                  </div>
 <div id="game">
       <div class="container">
-        <button class="score" type="button" style="font:20px; color:grey; height:35px; width:150px;">Reset Score</button>
+        <div class = "selector"><button id = "x" type="button" style="height:70px; width:70px; margin-top: 20px; background:pink;">X</button><button id = "o" type="button" style="height:70px; width:70px; margin-top: 20px; background:purple;">O</button></div>
+        <button id="score" type="button" style="font:30px; color:grey; height:50px; width:150px;">Reset Score</button>
         <h2></h2>
         <div class="row h-100 board" >
 
-          <div id="1" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
-          <div id="2" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
-          <div id="3" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
-          <div id="4" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
-          <div id="5" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
-          <div id="6" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
-          <div id="7" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
-          <div id="8" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
-          <div id="9" class="col-4 box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="1" class="col-4 col-sm-30% box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="2" class="col-4 col-sm-30% box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="3" class="col-4 col-sm-30% box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="4" class="col-4 col-sm-30% box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="5" class="col-4 col-sm-30% box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="6" class="col-4 col-sm-30% box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="7" class="col-4 col-sm-30% box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="8" class="col-4 col-sm-30% box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
+          <div id="9" class="col-4 col-sm-30% box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
         </div>
       </div>
       <div class="number">

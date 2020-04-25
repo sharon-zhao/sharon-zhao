@@ -9,7 +9,13 @@ let x_win = 0
 let o_win = 0
 let draw = 0
 let gameOver = false
-
+const choosePlayer = function(event){
+  console.log($(event.target).attr('id'))
+  if ($(event.target).attr('id') === "x"){
+    turn = 1
+  } else if($(event.target).attr('id') === "o"){
+    turn = 0}
+}
 
 const switchPlayer= function(event){
   const image1=$(event.target).children(".im1")
@@ -83,13 +89,13 @@ const onGame = function(event){
 if (!gameOver) {
 
 if (gameBoard[0]===1 && gameBoard[1]===1 && gameBoard[2]===1 ||
-  gameBoard[3]===1 && gameBoard[4]===1 && gameBoard[5]===1 ||
-  gameBoard[6]===1 && gameBoard[7]===1 && gameBoard[8]===1 ||
-  gameBoard[0]===1 && gameBoard[3]===1 && gameBoard[6]===1 ||
-  gameBoard[1]===1 && gameBoard[4]===1 && gameBoard[7]===1 ||
-  gameBoard[2]===1 && gameBoard[5]===1 && gameBoard[8]===1||
-  gameBoard[0]===1 && gameBoard[4]===1 && gameBoard[8]===1||
-  gameBoard[2]===1 && gameBoard[4]===1 && gameBoard[6]===1) {
+    gameBoard[3]===1 && gameBoard[4]===1 && gameBoard[5]===1 ||
+    gameBoard[6]===1 && gameBoard[7]===1 && gameBoard[8]===1 ||
+    gameBoard[0]===1 && gameBoard[3]===1 && gameBoard[6]===1 ||
+    gameBoard[1]===1 && gameBoard[4]===1 && gameBoard[7]===1 ||
+    gameBoard[2]===1 && gameBoard[5]===1 && gameBoard[8]===1||
+    gameBoard[0]===1 && gameBoard[4]===1 && gameBoard[8]===1||
+    gameBoard[2]===1 && gameBoard[4]===1 && gameBoard[6]===1) {
   // oWin++
 
    o_win++
@@ -99,22 +105,22 @@ if (gameBoard[0]===1 && gameBoard[1]===1 && gameBoard[2]===1 ||
    }
 
 else if (gameBoard[0]===2 && gameBoard[1]===2 && gameBoard[2]===2 ||
-  gameBoard[3]===2 && gameBoard[4]===2 && gameBoard[5]===2 ||
-  gameBoard[6]===2 && gameBoard[7]===2 && gameBoard[8]===2 ||
-  gameBoard[0]===2 && gameBoard[3]===2 && gameBoard[6]===2 ||
-  gameBoard[1]===2 && gameBoard[4]===2 && gameBoard[7]===2 ||
-  gameBoard[2]===2 && gameBoard[5]===2 && gameBoard[8]===2 ||
-  gameBoard[0]===2 && gameBoard[4]===2 && gameBoard[8]===2 ||
-  gameBoard[2]===2 && gameBoard[4]===2 && gameBoard[6]===2){
+         gameBoard[3]===2 && gameBoard[4]===2 && gameBoard[5]===2 ||
+         gameBoard[6]===2 && gameBoard[7]===2 && gameBoard[8]===2 ||
+         gameBoard[0]===2 && gameBoard[3]===2 && gameBoard[6]===2 ||
+         gameBoard[1]===2 && gameBoard[4]===2 && gameBoard[7]===2 ||
+         gameBoard[2]===2 && gameBoard[5]===2 && gameBoard[8]===2 ||
+         gameBoard[0]===2 && gameBoard[4]===2 && gameBoard[8]===2 ||
+         gameBoard[2]===2 && gameBoard[4]===2 && gameBoard[6]===2){
 
     x_win++
     console.log("X is winning "+x_win)
     gameOver = true
-   ui.xWin(x_win)
+    ui.xWin(x_win)
 }
 else if (gameBoard[0]!=='' && gameBoard[1]!=='' && gameBoard[2]!=='' &&
-    gameBoard[3]!=='' && gameBoard[4]!=='' && gameBoard[5]!=='' && gameBoard[6]!=='' &&
-    gameBoard[7]!=='' &&gameBoard[8]!=='' )
+         gameBoard[3]!=='' && gameBoard[4]!=='' && gameBoard[5]!=='' && gameBoard[6]!=='' &&
+         gameBoard[7]!=='' &&gameBoard[8]!=='' )
     {
       draw++
       console.log("It is a draw")
@@ -124,15 +130,26 @@ else if (gameBoard[0]!=='' && gameBoard[1]!=='' && gameBoard[2]!=='' &&
 
     }
 
-
-
 }
 
+const resetScore = function(){
+  console.log("resetScore")
+  // $('.show-X').val("")
+  // $('.show-O').val("")
+  // $('.show-D').val("")
+  x_win = 0
+  o_win = 0
+  draw = 0
+  console.log("x_win" + x_win)
+  ui.xWin(x_win)
+  ui.oWin(o_win)
+  ui.drawWin(draw)
+  reStart()
+}
 
 const reStart = function(){
-  console.log("restart")
-  // $('.im2').hide()
-  // $('.im1').hide()
+  // console.log("restart")
+// ui.restartGameOff()
   gameBoard = [
   '', '', '',
   '', '', '',
@@ -146,25 +163,19 @@ gameOver = false
 
 const quitGame = function() {
   console.log("quit")
-
   gameBoard = [
   '', '', '',
   '', '', '',
   '', '', ''
 ]
-  ui.restartGameOn()
+  ui.restartGameOff()
+  resetScore()
   turn = 1
-
-}
-
-const resetScore = function(){
-  x_win = 0
-  o_win = 0
-  draw = 0
-  ui.resetGame
+  gameOver=false
 }
 
 module.exports = {
+  choosePlayer,
   onGame,
   switchPlayer,
   reStart,
