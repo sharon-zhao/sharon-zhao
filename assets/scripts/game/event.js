@@ -14,6 +14,22 @@ let gameBoard = [
   '', '', '', '', '', '', '', '', ''
 ]
 
+//create a game
+const create_game = function(){
+  x_win = 0
+  o_win = 0
+  draw = 0
+  ui.xWin(x_win)
+  ui.oWin(o_win)
+  ui.drawWin(draw)
+  reStart()
+  ui.informationX()
+  api.createGame()
+    .then(ui.createGameSuccess)
+    .catch(ui.createGameFailure)
+
+}
+
 //players choose X or O
 const choosePlayer = function(event){
   let player = $(event.target).attr('id')
@@ -35,19 +51,8 @@ const choosePlayer = function(event){
 const onGame = function(event){
    let clickResult = $(event.target).attr('id')
 
-
-   // api.updateGame(index, turn)
-
- // fill the board
-   // gameBoard[parseInt(clickResult)-1]
-
   if (clickResult !== undefined && !gameOver) {
-    // console.log("GameBoard number: " + gameBoard[parseInt(clickResult) - 1])
-    // console.log("click result: " + clickResult)
-    // console.log("turn: " +turn)
-    // console.log(gameBoard)
     if (gameBoard[parseInt(clickResult)-1] === '' && turn === 1) {
-      // console.log('test')
       gameBoard[parseInt(clickResult)-1] = 1
       value = 'x'
       turn = 0
@@ -56,30 +61,18 @@ const onGame = function(event){
       value = 'o'
       turn = 1
 
+    }
   }
-  }
-
-
 }
 
-
-const saveGame = function(event){
-  let clickResult = $(event.target).attr('id')
-  let index = parseInt(clickResult)-1
-  api.updateGame(index, value)
-   console.log(api.updateGame(index, value))
-}
 //each turn play game
 const switchPlayer= function(event){
   const image1=$(event.target).children(".im1")
   const image2=$(event.target).children(".im2")
-
-
   const text1=$('h2').text("Start")
   text1.hide()
 
   let clickResult = $(event.target).attr('id')
-
   let number = gameBoard[parseInt(clickResult) - 1]
 
   if (gameOver === false) {
@@ -94,8 +87,13 @@ const switchPlayer= function(event){
     else {
       return
   }
-  checkWinner()
 
+  let index = parseInt(clickResult)-1
+  api.updateGame(index, value)
+    .then()
+    .catch(ui.updateGameFailure)
+
+  checkWinner()
 }
 //check who is winner
 const checkWinner = function(){
@@ -140,23 +138,6 @@ const checkWinner = function(){
 }
 
 
-
-//set calculated score to 0
-const resetScore = function(){
-  x_win = 0
-  o_win = 0
-  draw = 0
-  ui.xWin(x_win)
-  ui.oWin(o_win)
-  ui.drawWin(draw)
-  reStart()
-  ui.informationX()
-
-  api.createGame().then(ui.createGameSuccess)
-  console.log(api.createGame())
-
-}
-
 const resetGameBoard = function(){
   gameBoard = [
   '', '', '',
@@ -165,29 +146,30 @@ const resetGameBoard = function(){
 ]
   gameOver = false
 }
+
 const reStart = function(){
   resetGameBoard()
   ui.restartGameOn()
-// turn = 1
   resetGameBoard()
-
-
 }
 
 const quitGame = function() {
+  x_win = 0
+  o_win = 0
+  draw = 0
+  ui.xWin(x_win)
+  ui.oWin(o_win)
+  ui.drawWin(draw)
   resetGameBoard()
   ui.restartGameOff()
-  resetScore()
   turn = 1
-
 }
 
 module.exports = {
+  create_game,
   choosePlayer,
   onGame,
   switchPlayer,
   reStart,
-  quitGame,
-  resetScore,
-  saveGame
+  quitGame
 }

@@ -2,27 +2,15 @@
 const config = require('../config')
 const store = require('../store')
 
-// const playGame = function(){
+// const getGame = function(){
 //   return $.ajax({
-//    url:config.apiUrl + '/game',
-//    method: 'POST',
-//    headers:{
-//      Authorization:'Token token=' + store.user.token
-//    },
-//     body: ''
+//     url:config.apiUrl + '/games',
+//     method: 'GET',
+//     headers:{
+//       Authorization:'Token token=' + store.user.token
+//     },
 //   })
 // }
-
-
-const getGame = function(){
-  return $.ajax({
-    url:config.apiUrl + '/games',
-    method: 'GET',
-    headers:{
-      Authorization:'Token token=' + store.user.token
-    },
-  })
-}
 
 const createGame = function() {
   return $.ajax({
@@ -57,8 +45,7 @@ const updateGame = function(index, value){
 
 
 module.exports = {
-  // playGame,
-  getGame,
+  // getGame,
   createGame,
   updateGame
 

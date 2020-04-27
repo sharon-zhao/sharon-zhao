@@ -19,8 +19,6 @@ $(() => {
   $('.board').on('click',gameEvents.onGame)
   $('.board').on('click',gameEvents.switchPlayer)
   $('#start').on('click',gameEvents.reStart)
-  $('#score').on('click',gameEvents.resetScore)
+  $('#score').on('click',gameEvents.create_game)
   $('.selector').on('click',gameEvents.choosePlayer)
-  $('#save').on('click',gameEvents.saveGame)
-
 })

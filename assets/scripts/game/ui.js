@@ -39,7 +39,6 @@ const text1=$('h2').text("Start")
 const restartGameOn = function(){
   $('.im2').hide()
   $('.im1').hide()
-  // const text1=$('h2').text("Restart")
   text1.show()
 }
 
@@ -51,15 +50,21 @@ const restartGameOff = function(){
 }
 
 const createGameSuccess = function(data) {
+  const success = $('h2').text("Create Game Success!")
+  success.show()
   store.game = data.game
 }
 
-// const resetGame = function(){
-//   $('.im2').hide()
-//   $('.im1').hide()
-//   // const text1=$('h2').text("Restart")
-//   // text1.show()
-// }
+const createGameFailure = function(data){
+  const fail = $('h2').text("Create Game Failed!")
+  fail.show()
+}
+
+const updateGameFailure = function(data){
+  const fail = $('h2').text("Update Game Failed!")
+  fail.show()
+}
+
 
 module.exports = {
   xWin,
@@ -67,8 +72,9 @@ module.exports = {
   drawWin,
   restartGameOn,
   restartGameOff,
-  // resetGame,
   informationX,
   informationO,
-  createGameSuccess
+  createGameSuccess,
+  createGameFailure,
+  updateGameFailure
 }
