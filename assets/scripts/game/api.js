@@ -2,16 +2,16 @@
 const config = require('../config')
 const store = require('../store')
 
-const playGame = function(){
-  return $.ajax({
-   url:config.apiUrl + '/game',
-   method: 'POST',
-   headers:{
-     Authorization:'Token token=' + store.user.token
-   },
-    body: ''
-  })
-}
+// const playGame = function(){
+//   return $.ajax({
+//    url:config.apiUrl + '/game',
+//    method: 'POST',
+//    headers:{
+//      Authorization:'Token token=' + store.user.token
+//    },
+//     body: ''
+//   })
+// }
 
 
 const getGame = function(){
@@ -24,7 +24,7 @@ const getGame = function(){
   })
 }
 
-const createGame = function(data) {
+const createGame = function() {
   return $.ajax({
     url:config.apiUrl + '/games',
     method: 'POST',
@@ -35,15 +35,15 @@ const createGame = function(data) {
   })
 }
 
-const updateGame = function(data){
+const updateGame = function(index, value){
   return $.ajax({
-    url:config.apiUrl + '/games' + store.game.id,
+    url:config.apiUrl + 'games/' + store.game.id,
     method: 'PATCH',
     data: {
       "game": {
          "cell": {
-         "index": 0,
-         "value": "x"
+         "index": index,
+         "value": value
             },
       "over": false
   }
@@ -56,10 +56,10 @@ const updateGame = function(data){
 
 
 
-
 module.exports = {
-  playGame,
+  // playGame,
   getGame,
   createGame,
+  updateGame
 
 }

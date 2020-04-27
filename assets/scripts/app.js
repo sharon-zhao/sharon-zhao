@@ -8,6 +8,7 @@
 
 const authEvents = require('./auth/event')
 const gameEvents = require('./game/event')
+// const gameSave = require('./game/api')
 
 $(() => {
   // your JS code goes here
@@ -20,5 +21,6 @@ $(() => {
   $('#start').on('click',gameEvents.reStart)
   $('#score').on('click',gameEvents.resetScore)
   $('.selector').on('click',gameEvents.choosePlayer)
+  $('#save').on('click',gameEvents.saveGame)
 
 })

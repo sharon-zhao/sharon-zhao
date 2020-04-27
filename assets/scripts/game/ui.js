@@ -50,6 +50,10 @@ const restartGameOff = function(){
 
 }
 
+const createGameSuccess = function(data) {
+  store.game = data.game
+}
+
 // const resetGame = function(){
 //   $('.im2').hide()
 //   $('.im1').hide()
@@ -65,5 +69,6 @@ module.exports = {
   restartGameOff,
   // resetGame,
   informationX,
-  informationO
+  informationO,
+  createGameSuccess
 }

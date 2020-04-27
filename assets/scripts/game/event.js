@@ -9,8 +9,7 @@ let x_win = 0
 let o_win = 0
 let draw = 0
 let gameOver = false
-
-
+let value = ''
 let gameBoard = [
   '', '', '', '', '', '', '', '', ''
 ]
@@ -29,17 +28,58 @@ const choosePlayer = function(event){
 
   }
  }
+
 }
 
+//main game logic, assign value to gameBoard and determine who is winner
+const onGame = function(event){
+   let clickResult = $(event.target).attr('id')
+
+
+   // api.updateGame(index, turn)
+
+ // fill the board
+   // gameBoard[parseInt(clickResult)-1]
+
+  if (clickResult !== undefined && !gameOver) {
+    // console.log("GameBoard number: " + gameBoard[parseInt(clickResult) - 1])
+    // console.log("click result: " + clickResult)
+    // console.log("turn: " +turn)
+    // console.log(gameBoard)
+    if (gameBoard[parseInt(clickResult)-1] === '' && turn === 1) {
+      // console.log('test')
+      gameBoard[parseInt(clickResult)-1] = 1
+      value = 'x'
+      turn = 0
+    } else if (gameBoard[parseInt(clickResult)-1] === '' && turn === 0) {
+      gameBoard[parseInt(clickResult)-1] = 2
+      value = 'o'
+      turn = 1
+
+  }
+  }
+
+
+}
+
+
+const saveGame = function(event){
+  let clickResult = $(event.target).attr('id')
+  let index = parseInt(clickResult)-1
+  api.updateGame(index, value)
+   console.log(api.updateGame(index, value))
+}
 //each turn play game
 const switchPlayer= function(event){
   const image1=$(event.target).children(".im1")
   const image2=$(event.target).children(".im2")
-  api.createGame()
+
+
   const text1=$('h2').text("Start")
   text1.hide()
 
   let clickResult = $(event.target).attr('id')
+
   let number = gameBoard[parseInt(clickResult) - 1]
 
   if (gameOver === false) {
@@ -99,42 +139,22 @@ const checkWinner = function(){
    }
 }
 
-//main game logic, assign value to gameBoard and determine who is winner
-const onGame = function(event){
-   let clickResult = $(event.target).attr('id')
 
- // fill the board
-   // gameBoard[parseInt(clickResult)-1]
-
-  if (clickResult !== undefined && !gameOver) {
-    console.log("GameBoard number: " + gameBoard[parseInt(clickResult) - 1])
-    console.log("click result: " + clickResult)
-    console.log("turn: " +turn)
-    console.log(gameBoard)
-    if (gameBoard[parseInt(clickResult)-1] === '' && turn === 1) {
-      console.log('test')
-      gameBoard[parseInt(clickResult)-1] = 1
-      turn = 0
-    } else if (gameBoard[parseInt(clickResult)-1] === '' && turn === 0) {
-      gameBoard[parseInt(clickResult)-1] = 2
-      turn = 1
-
-  }
-  }
-
-}
 
 //set calculated score to 0
 const resetScore = function(){
   x_win = 0
   o_win = 0
   draw = 0
-  console.log("x_win" + x_win)
   ui.xWin(x_win)
   ui.oWin(o_win)
   ui.drawWin(draw)
   reStart()
   ui.informationX()
+
+  api.createGame().then(ui.createGameSuccess)
+  console.log(api.createGame())
+
 }
 
 const resetGameBoard = function(){
@@ -150,6 +170,8 @@ const reStart = function(){
   ui.restartGameOn()
 // turn = 1
   resetGameBoard()
+
+
 }
 
 const quitGame = function() {
@@ -166,5 +188,6 @@ module.exports = {
   switchPlayer,
   reStart,
   quitGame,
-  resetScore
+  resetScore,
+  saveGame
 }
