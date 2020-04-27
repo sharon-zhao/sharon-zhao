@@ -8,14 +8,15 @@
 
 const authEvents = require('./auth/event')
 const gameEvents = require('./game/event')
+
 $(() => {
   // your JS code goes here
   $('#sign-up').on('submit',authEvents.onSignUp)
   $('#sign-in').on('submit',authEvents.onSignIn)
   $('#change-password').on('submit',authEvents.onChangePassword)
   $('#sign-out').on('submit',authEvents.onSignOut)
-  $('.board').on('click',gameEvents.switchPlayer)
   $('.board').on('click',gameEvents.onGame)
+  $('.board').on('click',gameEvents.switchPlayer)
   $('#start').on('click',gameEvents.reStart)
   $('#score').on('click',gameEvents.resetScore)
   $('.selector').on('click',gameEvents.choosePlayer)

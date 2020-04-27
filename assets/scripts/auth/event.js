@@ -19,8 +19,6 @@ const onSignUp = function(event){
 }
 
 const onSignIn = function(event){
-  //Prevent the page from refresh
-
   event.preventDefault()
   const form = event.target
   console.log(form)
@@ -34,7 +32,6 @@ const onSignIn = function(event){
 }
 
 const onChangePassword = function(event){
-  //Prevent the page from refresh
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
@@ -45,7 +42,6 @@ const onChangePassword = function(event){
 }
 
 const onSignOut = function(event){
-  //Prevent the page from refresh
   event.preventDefault()
   api.signOut()
    .then(ui.signOutSuccess)
@@ -53,8 +49,6 @@ const onSignOut = function(event){
   events.quitGame()
 
 }
-
-
 
 
 module.exports = {

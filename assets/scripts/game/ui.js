@@ -33,7 +33,9 @@ const drawWin = function(draw){
     dtext.show()
     console.log("Draw: "+ draw)
 }
-const text1=$('h2').text("Restart")
+
+
+const text1=$('h2').text("Start")
 const restartGameOn = function(){
   $('.im2').hide()
   $('.im1').hide()

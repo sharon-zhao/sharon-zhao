@@ -5,26 +5,60 @@ $body-bg-color: $gray-200;
 $font-color: $light;
 
 body {
-  background-color: $body-bg-color;
+  // background-color: $body-bg-color;
+  background: url('public/memphis-colorful.png')
 }
-// .container{
-//   height: 70em;
-//   width:80em;
-// }
+
+#unauthenticated {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.container{
+  margin-bottom: 80px;
+}
 .board {
-
-  margin: 0 auto;
-  // max-height: calc(100vh - 5em);
-  // max-width: calc(100vh - 5em);
-
+  margin: 50px;
+  max-height: calc(100vh - 5em);
+  max-width: calc(100vh - 5em);
   background: url('public/lala.jpg') no-repeat center center;
 }
 .selector {
   display: flex;
   justify-content: center;
 }
-.score {
-  margin-right: 0 auto;
+#score {
+    cursor: pointer !important;
+    display: inline-block !important;
+    margin-top:20px !important;
+    position: relative !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    border-color: black !important;
+    width: auto !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    // font-size: 14px !important;
+    line-height: 18px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    outline: none !important;
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    -webkit-transition: box-shadow 0.2s ease, -webkit-transform 0.1s ease, transform 0.1s ease !important;
+    -moz-transition: box-shadow 0.2s ease, transform 0.1s ease !important;
+    transition: box-shadow 0.2s ease, -ms-transform 0.1s ease, -webkit-transform 0.1s ease, transform 0.1s ease !important;
+    border: none !important;
+    background: -webkit-linear-gradient(to right, #E61E4D 0%, #E31C5F 50%, #D70466 100%) !important;
+    background: -moz-linear-gradient(to right, #E61E4D 0%, #E31C5F 50%, #D70466 100%) !important;
+    background: linear-gradient(to right, #E61E4D 0%, #E31C5F 50%, #D70466 100%) !important;
+    color: #FFFFFF !important;
+    white-space: nowrap !important;
+
 }
 .box {
   min-height: calc(100% / 3);
@@ -45,6 +79,20 @@ body {
   }
 }
 
+.btn {
+  height: 60px;
+  width: 120px;
+  font-size: 25px;
+}
+
+#out {
+  height: 60px;
+  width: 150px;
+}
+#word {
+  height: 60px;
+  width:300px;
+}
 h1 {
   width:100%;
   display:flex;
@@ -53,6 +101,11 @@ h1 {
   font-size:5em;
   text-shadow:#f3f3f3 1px 1px 0px, #b2b2b2 1px 2px 0;
   justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: #5fddfa;
+  // border-top:100px;
+  border-color: #5fddfa;
 }
 
 #game {
@@ -82,15 +135,24 @@ flex-direction: row;
 }
 
 input::-webkit-input-placeholder {
-    /* 修改字体颜色 */
     color: #000080;
-    /* 修改字号，默认继承input */
-    font-size: 1.25em;
-    /* 设置背景色 */
+    font-size: 25px;
     // background: #8ac6d1;
-    text-indent: 0.625em;
+    text-indent: 0.1em;
     outline-style: none ;
-    border-radius: 1em;
+
+}
+input[type="email"]
+{   padding-left: 20px;
+    font-size:30px;
+
+}
+input {
+  padding-left: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: transparent;
+
 }
 #unauthenticated {
   margin-left: 1.25em;

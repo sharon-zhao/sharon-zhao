@@ -18,37 +18,38 @@ minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
       <div id="message"></div>
      <div id="unauthenticated">
       <form id="sign-up">
-            <input required type="email" placeholder="User Email" name="credentials[email]" style="width:300px;height:40px; margin-bottom:15px;">
-         <div><input required type="password" placeholder="User password" name="credentials[password]" style="width:300px;height:40px; margin-bottom:15px;"></div>
-             <input required type="password" placeholder="User password again" name="credentials[password_confirmation]" style="width:300px;height:40px; margin-bottom:15px;">
+            <input required type="email" placeholder="User Email" name="credentials[email]" style="width:500px;height:60px; margin-bottom:15px;">
+         <div><input required type="password" placeholder="User Password" name="credentials[password]" style="width:500px;height:60px; margin-bottom:15px;"></div>
+             <input required type="password" placeholder="User Password Confirm" name="credentials[password_confirmation]" style="width:500px;height:60px; margin-bottom:15px;">
          <div><button type="submit" class="btn btn-info">Sign Up</button></div>
           </form>
 
           <form id="sign-in">
-                <input required type="email" placeholder="User Email" name="credentials[email]" style="width:300px;height:40px; margin-top: 30px; margin-bottom:15px;">
-             <div><input required type="password" placeholder="User password" name="credentials[password]" style="width:300px;height:40px; margin-bottom:15px;"></div>
+                <input required type="email" placeholder="User Email" name="credentials[email]" style="width:500px;height:60px; margin-top: 30px; margin-bottom:15px;">
+             <div><input required type="password" placeholder="User password" name="credentials[password]" style="width:500px;height:60px; margin-bottom:15px;"></div>
 
              <div><button type="submit" class="btn btn-info">Sign In</button></div>
               </form>
            </div>
            <div id="authenticated">
               <form id="change-password">
-                    <input required type="text" placeholder="old password" name="passwords[old]" style="width:300px;height:40px; margin-bottom:15px;">
-              <div><input required type="text" placeholder="new password" name="passwords[new]" style="width:300px;height:40px; margin-bottom:15px;"></div>
-             <div><button type="submit" class="btn btn-info">Change Password</button></div>
+                    <input required type="text" placeholder="old password" name="passwords[old]" style="width:500px;height:60px; margin-bottom:15px;">
+              <div><input required type="text" placeholder="new password" name="passwords[new]" style="width:500px;height:60px; margin-bottom:15px;"></div>
+             <div><button id = "word" type="submit" class="btn btn-info">Change Password</button></div>
 
               </form>
 
                 <!-- <div id="unauthenticated"> -->
               <form id="sign-out">
-                     <div><button type="submit" class="btn btn-info" style="margin-top:20px;">Sign Out</button></div>
+                     <div><button id = "out" type="submit" class="btn btn-info" style="margin-top:20px;">Sign Out</button></div>
                    </form>
                  </div>
 <div id="game">
       <div class="container">
-        <div class = "selector"><button id = "x" type="button" style="height:70px; width:70px; margin-top: 20px; background:pink;">X</button><button id = "o" type="button" style="height:70px; width:70px; margin-top: 20px; background:purple;">O</button></div>
+        <div class = "selector"><button id = "x" type="button" style="height:70px; width:70px; margin-top: 20px; border-radius: 25px; background:pink;">X</button>
+          <button id = "o" type="button" style="height:70px; width:70px; margin-top: 20px; border-radius: 25px; background:purple;">O</button></div>
 
-        <button id="score" type="button" style="font:30px; color:grey; height:50px; width:150px;">Reset Score</button>
+        <button id="score" type="button" style="font:30px; bold; color:grey; height:50px; width:150px; border-radius:10px;">Reset Score</button>
         <div class="row h-100 board" >
 
           <div id="1" class="col-4 col-sm-30% box"><img class= "im1" src="X.png" ><img class= "im2" src="O.png" ></div>
@@ -65,10 +66,10 @@ minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
       <div class="number">
         <h3 id = "info"></h3>
         <h2></h2>
-      <div><h5>X Win</h5><input class="show-X" required type="text" placeholder="0" style="width:300px;height:40px;"></div>
-    <div><h5>O Win</h5><input class="show-O" required type="text" placeholder="0" style="width:300px;height:40px;"></div>
-      <div><h5>Draw</h5><input class="show-D" required type="text" placeholder="0" style="width:300px;height:40px;"></div>
-      <button id="start" type="button" class="btn btn-primary btn-lg">Start</button>
+      <div><h4>X Win</h4><input class="show-X" required type="text" placeholder="0" style="width:300px;height:55px;"></div>
+    <div><h4>O Win</h4><input class="show-O" required type="text" placeholder="0" style="width:300px;height:55px;"></div>
+      <div><h4>Draw</h4><input class="show-D" required type="text" placeholder="0" style="width:300px;height:55px;"></div>
+      <button id="start" type="button" style="margin-top: 20px; height:50px;" class="btn btn-primary ">Start</button>
     </div>
 </div>
 
