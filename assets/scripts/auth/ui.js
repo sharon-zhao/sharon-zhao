@@ -2,7 +2,7 @@
 
 const store = require('../store')
 
-// $('#game').hide()
+$('#game').hide()
 $('#authenticated').hide()
 
 const signUpSuccess = function (data){
