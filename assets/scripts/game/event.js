@@ -47,7 +47,7 @@ const choosePlayer = function(event){
 
 }
 
-//main game logic, assign value to gameBoard and determine who is winner
+//main game logic, assign value to gameBoard
 const onGame = function(event){
    let clickResult = $(event.target).attr('id')
 
