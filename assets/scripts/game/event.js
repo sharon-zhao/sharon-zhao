@@ -23,7 +23,7 @@ const create_game = function(){
   ui.oWin(o_win)
   ui.drawWin(draw)
   reStart()
-  ui.informationX()
+  // ui.informationX()
   api.getGame()
     .then()
     .catch()
@@ -36,15 +36,16 @@ const create_game = function(){
 //players choose X or O
 const choosePlayer = function(event){
   let player = $(event.target).attr('id')
-  if (gameOver){
+  let choose = false
+  if (!gameOver && !choose){
     if (player === "x" ) {
      turn = 1
      ui.informationX()
-
+     choose = true
   } else if(player === "o") {
      turn = 0
      ui.informationO()
-
+     choose = true
   }
  }
 }
@@ -152,7 +153,6 @@ const resetGameBoard = function(){
 const reStart = function(){
   resetGameBoard()
   ui.restartGameOn()
-  resetGameBoard()
 }
 
 const quitGame = function() {

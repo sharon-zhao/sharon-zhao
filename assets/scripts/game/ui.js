@@ -18,20 +18,17 @@ const informationO = function(){
 const xWin = function(x_win){
 const xtext= $('.show-X').attr("value",x_win)
   xtext.show()
-  console.log("X is winning: "+ x_win)
 
 }
 
 const oWin = function(o_win){
   const otext= $('.show-O').attr("value",o_win)
     otext.show()
-    console.log("O is winning: "+ o_win)
 }
 
 const drawWin = function(draw){
   const dtext= $('.show-D').attr("value",draw)
     dtext.show()
-    console.log("Draw: "+ draw)
 }
 
 
@@ -39,7 +36,6 @@ const text1=$('#show_message').text("Start")
 const restartGameOn = function(){
   $('.im2').hide()
   $('.im1').hide()
-
   text1.show()
 }
 

@@ -5,7 +5,6 @@ $body-bg-color: $gray-200;
 $font-color: $light;
 
 body {
-  // background-color: $body-bg-color;
   background: url('public/memphis-colorful.png')
 }
 
@@ -20,7 +19,7 @@ body {
 }
 .container{
   margin-bottom: 40px;
-  width:30em;
+  width:25em;
 }
 .board {
   margin: 20px;
@@ -44,7 +43,6 @@ body {
     border-color: black !important;
     width: auto !important;
     font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-    // font-size: 14px !important;
     line-height: 18px !important;
     font-weight: 600 !important;
     border-radius: 8px !important;
@@ -191,4 +189,7 @@ input {
 #infor {
   display: flex;
   align-content: center;
+}
+#show_message {
+  margin: 10px;
 }

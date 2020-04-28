@@ -1,15 +1,21 @@
 # Tic-tac-toe Project
 ## Technologies used:
---html
---CSS
---javascript
---jquery
---ajax
---json
+-- html
+-- CSS(scss)
+-- javascript
+-- jquery
+-- ajax
+-- json
+-- cURL
 
 ## Planning
 set prototype html => write javascript logic, to make each click work
 =>modify bugs => make the page prety(CSS) => set api, connect with server
+
+## As a user:
+- I'd like to join in/out and change my password easily, and don't need to repeat log in every games
+- I'd like to view the result, if possible i want some rewards like start or flowers
+- I hope there is not error during the game
 
 ## Story about process
 Write the basic function is not very difficult, but bug free is a big challenge.

@@ -8,11 +8,10 @@ const apigame = require('../game/api')
 
 
 const onSignUp = function(event){
-  //Prevent the page from refresh
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  console.log(formData)
+  // console.log(formData)
   api.signUp(formData)
    .then(ui.signUpSuccess)
    .catch(ui.signUpFailure)
@@ -21,13 +20,13 @@ const onSignUp = function(event){
 const onSignIn = function(event){
   event.preventDefault()
   const form = event.target
-  console.log(form)
+  // console.log(form)
   const formData = getFormFields(form)
-  console.log(formData)
+  // console.log(formData)
   api.signIn(formData)
    .then(ui.signInSuccess)
    .catch(ui.signInFailure)
-   console.log(event)
+   // console.log(event)
 
 }
 
@@ -35,7 +34,7 @@ const onChangePassword = function(event){
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  console.log(formData)
+  // console.log(formData)
   api.changePassword(formData)
    .then(ui.changePasswordSuccess)
    .catch(ui.changePasswordFailure)
