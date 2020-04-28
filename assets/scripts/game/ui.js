@@ -35,10 +35,11 @@ const drawWin = function(draw){
 }
 
 
-const text1=$('h2').text("Start")
+const text1=$('#show_message').text("Start")
 const restartGameOn = function(){
   $('.im2').hide()
   $('.im1').hide()
+
   text1.show()
 }
 
@@ -50,18 +51,18 @@ const restartGameOff = function(){
 }
 
 const createGameSuccess = function(data) {
-  const success = $('h2').text("Create Game Success!")
+  const success = $('#show_message').text("Create Game Success!")
   success.show()
   store.game = data.game
 }
 
 const createGameFailure = function(data){
-  const fail = $('h2').text("Create Game Failed!")
+  const fail = $('#show_message').text("Create Game Failed!")
   fail.show()
 }
 
 const updateGameFailure = function(data){
-  const fail = $('h2').text("Update Game Failed!")
+  const fail = $('#show_message').text("Update Game Failed!")
   fail.show()
 }
 

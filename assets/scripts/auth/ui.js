@@ -48,8 +48,8 @@ const changePasswordSuccess = function (data){
    $('#message').removeClass()
    $('#message').addClass('Success')
    console.log(`changePasswordSuccess ran. Data is:`, data)
-   $('#authenticated').hide()
-   $('#unauthenticated').show()
+   $('#authenticated').show()
+   $('#unauthenticated').hide()
    $('form').trigger('reset')
 
 }
