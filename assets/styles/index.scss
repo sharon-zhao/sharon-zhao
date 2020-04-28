@@ -19,13 +19,15 @@ body {
   margin-left: 20px;
 }
 .container{
-  margin-bottom: 80px;
+  margin-bottom: 40px;
+  width:30em;
 }
 .board {
-  margin: 50px;
-  max-height: calc(100vh - 5em);
-  max-width: calc(100vh - 5em);
+  margin: 20px;
+  // max-height: calc(100vh - 5em);
+  // max-width: calc(100vh - 5em);
   background: url('public/lala.jpg') no-repeat center center;
+  width: 25em;
 }
 .selector {
   display: flex;
@@ -176,14 +178,14 @@ input {
 #im1 {
   position:absolute;
   z-index: 1;
-  height:20vh;
-  width: 20vh;
+  height:4em;
+  width: 4em;
 }
 #im2 {
   position: absolute;
   z-index: 2;
-  height:20vh;
-  width: 20vh;
+  height:4em;
+  width: 4em;
 }
 
 #infor {
