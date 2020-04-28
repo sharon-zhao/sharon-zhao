@@ -18,15 +18,18 @@ body {
   margin-left: 20px;
 }
 .container{
-  margin-bottom: 40px;
-  width:25em;
+  margin-bottom: 2.5em;
+  width:30em;
+  height: 42em;
 }
 .board {
-  margin: 20px;
-  // max-height: calc(100vh - 5em);
-  // max-width: calc(100vh - 5em);
+  margin: 1.25em;
+  max-height: calc(100vh - 5em);
+  max-width: calc(100vw - 5em);
   background: url('public/lala.jpg') no-repeat center center;
+  background-size:50em;
   width: 25em;
+  height: 25em;
 }
 .selector {
   display: flex;
@@ -126,8 +129,9 @@ flex-direction: row;
   flex-direction: column;
   flex-wrap: wrap;
   margin-right: 10%;
-  margin-top: 6.25em;
+  margin-top: 1em;
   margin-left: 1em;
+  margin-top: 2em;
   align-self: flex-start;
   // margin-left: 80%;
 }
