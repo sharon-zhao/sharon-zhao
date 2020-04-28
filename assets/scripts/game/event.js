@@ -44,7 +44,6 @@ const choosePlayer = function(event){
 
   }
  }
-
 }
 
 //main game logic, assign value to gameBoard
@@ -52,7 +51,7 @@ const onGame = function(event){
    let clickResult = $(event.target).attr('id')
 
   if (clickResult !== undefined && !gameOver) {
-    if (gameBoard[parseInt(clickResult)-1] === '' && turn === 1) {
+      if (gameBoard[parseInt(clickResult)-1] === '' && turn === 1) {
       gameBoard[parseInt(clickResult)-1] = 1
       value = 'x'
       turn = 0
@@ -171,5 +170,5 @@ module.exports = {
   onGame,
   switchPlayer,
   reStart,
-  quitGame
+  quitGame,
 }
