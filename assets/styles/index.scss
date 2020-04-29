@@ -18,28 +18,36 @@ body {
   margin-left: 20px;
 }
 .container{
-  margin-bottom: 2.5em;
-  width:30em;
-  height: 42em;
+  height: 100vh;
+  width: 100vh;
+  margin-left: 2em;
+  margin-top: 1em;
+  margin-right: 2em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
 }
+
 .board {
-  margin: 1.25em;
-  max-height: calc(100vh - 5em);
-  max-width: calc(100vw - 5em);
+  max-height: calc(80vh - 5em);
+  max-width: calc(80vw - 5em);
   background: url('public/lala.jpg') no-repeat center center;
   background-size:50em;
   width: 25em;
-  height: 25em;
+  height: 20em;
+  margin-top: 2em;
 }
+
 .selector {
   display: flex;
   justify-content: center;
 }
 #score {
-    font-size: 20px;
+    font-size: 1em;
     cursor: pointer !important;
     display: inline-block !important;
-    margin-top:20px !important;
+    margin-top:1em !important;
     position: relative !important;
     text-align: center !important;
     text-decoration: none !important;
@@ -47,7 +55,7 @@ body {
     width: auto !important;
     font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
     line-height: 18px !important;
-    font-weight: 600 !important;
+    font-weight: 600px !important;
     border-radius: 8px !important;
     border-width: 1px !important;
     border-style: solid !important;
@@ -69,10 +77,9 @@ body {
 }
 .box {
   min-height: calc(100% / 3);
-  height: 5em;
-  width: 5em;
+  height: 2em;
+  width: 2em;
   align-items: center;
-  // background-color: $secondary;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
   color: $font-color;
@@ -112,7 +119,6 @@ h1 {
   margin-top: 50px;
   margin-bottom: 50px;
   background-color: #5fddfa;
-  // border-top:100px;
   border-color: #5fddfa;
 }
 
@@ -125,15 +131,12 @@ flex-direction: row;
 }
 .number {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   flex-direction: column;
-  flex-wrap: wrap;
-  margin-right: 10%;
-  margin-top: 1em;
+  margin-right: 1.5em;
   margin-left: 1em;
-  margin-top: 2em;
-  align-self: flex-start;
-  // margin-left: 80%;
+  margin-bottom: 3.5em;
+  align-self: center;
 }
 #message{
   margin-left: 1.25em;
@@ -146,7 +149,6 @@ flex-direction: row;
 input::-webkit-input-placeholder {
     color: #000080;
     font-size: 20px;
-    // background: #8ac6d1;
     text-indent: 0.1em;
     outline-style: none ;
 
@@ -161,7 +163,7 @@ input {
   border-radius: 10px;
   border: 1px solid black;
   background-color: transparent;
-
+  margin: auto;
 }
 #unauthenticated {
   margin-left: 1.25em;
@@ -177,17 +179,11 @@ input {
   display: flex;
   justify-content: center;
 }
-#im1 {
+.box img {
   position:absolute;
   z-index: 1;
-  height:4em;
-  width: 4em;
-}
-#im2 {
-  position: absolute;
-  z-index: 2;
-  height:4em;
-  width: 4em;
+  width: 65%;
+  margin: auto;
 }
 
 #infor {
@@ -196,4 +192,9 @@ input {
 }
 #show_message {
   margin: 10px;
+}
+
+#start-button {
+  margin: 2em;
+
 }

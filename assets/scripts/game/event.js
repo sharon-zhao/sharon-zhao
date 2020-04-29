@@ -23,7 +23,6 @@ const create_game = function(){
   ui.oWin(o_win)
   ui.drawWin(draw)
   reStart()
-  // ui.informationX()
   api.getGame()
     .then()
     .catch()
