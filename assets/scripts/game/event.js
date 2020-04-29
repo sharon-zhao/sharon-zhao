@@ -29,7 +29,6 @@ const create_game = function(){
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
-
 }
 
 //players choose X or O

@@ -50,6 +50,8 @@ const createGameSuccess = function(data) {
   const success = $('#show_message').text("Create Game Success!")
   success.show()
   store.game = data.game
+  $('.container').show()
+  $('.number').show()
 }
 
 const createGameFailure = function(data){
