@@ -14,7 +14,7 @@ set prototype html => write javascript logic, to make each click work
 
 ## As a user:
 - I'd like to join in/out and change my password easily, and don't need to repeat log in every games
-- I'd like to view the result, if possible i want some rewards like start or flowers
+- I'd like to view the result, if possible I want some rewards like start or flowers
 - I hope there is not error during the game
 ## Wireframes
 - https://user-images.githubusercontent.com/62820094/81132939-1c9c0800-8f1e-11ea-98d2-60a42642fbc2.jpeg
@@ -31,3 +31,6 @@ but they all did not work, so I consulted my tutor, they told me it should be th
 --the last thing is api. Acctually, I am not quite understand the principle of api, so I searched a lot of documents to read, and realized what it was finally. I used console.log() to try lots of possible format, then I got the right way.
 
 All these process cheer my up, I have confidence to face more challenges. A soft engineer will always face the problem he/she cannot solve, the searching ability is a key to support the engineer to be a eligible one.
+
+## Unsolved Problems
+- Show users the rewards, it should be a pop up picture
