@@ -33,7 +33,7 @@ const create_game = function(){
 
 //players choose X or O
 const choosePlayer = function(event){
-  let player = $(event.target).attr('_id')
+  let player = $(event.target).attr('id')
   let choose = false
   if (!gameOver && !choose){
     if (player === "x" ) {
@@ -50,7 +50,7 @@ const choosePlayer = function(event){
 
 //main game logic, assign value to gameBoard
 const onGame = function(event){
-   let clickResult = $(event.target).attr('_id')
+   let clickResult = $(event.target).attr('id')
 
   if (clickResult !== undefined && !gameOver) {
       if (gameBoard[parseInt(clickResult)-1] === '' && turn === 1) {
@@ -73,7 +73,7 @@ const switchPlayer= function(event){
   const text1=$('h2').text("Start")
   text1.hide()
 
-  let clickResult = $(event.target).attr('_id')
+  let clickResult = $(event.target).attr('id')
   let number = gameBoard[parseInt(clickResult) - 1]
 
   if (gameOver === false) {
