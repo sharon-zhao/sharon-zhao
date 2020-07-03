@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,
+minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>Tic-tac-toe</h1>
+      <div id="message"></div>
+     <div id="unauthenticated">
+      <form id="sign-up">
+            <input required type="email" placeholder="User Email" name="credentials[email]" style="width:250px;height:40px; margin-bottom:15px;">
+         <div><input required type="password" placeholder="User Password" name="credentials[password]" style="width:250px;height:40px; margin-bottom:15px;"></div>
+             <input required type="password" placeholder="User Password Confirm" name="credentials[password_confirmation]" style="width:250px;height:40px; margin-bottom:15px;">
+         <div><button type="submit" class="btn btn-info">Sign Up</button></div>
+          </form>
+
+          <form id="sign-in">
+                <input required type="email" placeholder="User Email" name="credentials[email]" style="width:250px;height:40px; margin-top: 30px; margin-bottom:15px;">
+             <div><input required type="password" placeholder="User password" name="credentials[password]" style="width:250px;height:40px; margin-bottom:15px;"></div>
+
+             <div><button type="submit" class="btn btn-info">Sign In</button></div>
+              </form>
+           </div>
+           <div id="authenticated">
+              <form id="change-password">
+                    <input required type="text" placeholder="old password" name="passwords[old]" style="width:250px;height:40px; margin-bottom:15px;">
+              <div><input required type="text" placeholder="new password" name="passwords[new]" style="width:250px;height:40px; margin-bottom:15px;"></div>
+             <div><button id = "word" type="submit" class="btn btn-info">Change Password</button></div>
+
+              </form>
+
+                <!-- <div id="unauthenticated"> -->
+              <form id="sign-out">
+                     <div><button id = "out" type="submit" class="btn btn-info" style="margin-top:20px;">Sign Out</button></div>
+                   </form>
+                 </div>
+<div id="game">
+  <div id="start-button">
+  <div class = "selector"><button id = "x" type="button" style="height:40px; width:40px; margin-top: 20px; border-radius: 25px; background:pink;">X</button>
+    <button id = "o" type="button" style="height:40px; width:40px; margin-top: 20px; border-radius: 25px; background:purple;">O</button></div>
+  <div>
+    <button id="score" type="button" style="font:15px; bold; color:grey; height:2.5em; width:4em; border-radius:10px;">Create Game</button></div>
+  </div>
+      <div class="container">
+        <div class="row h-100 board" >
+
+          <div id="1" class="col-4 box div1"><img class= "im1" src="public/X.png" ><img class= "im2" src="public/O.png" ></div>
+          <div id="2" class="col-4 box div1"><img class= "im1" src="public/X.png" ><img class= "im2" src="public/O.png" ></div>
+          <div id="3" class="col-4 box div1"><img class= "im1" src="public/X.png" ><img class= "im2" src="public/O.png" ></div>
+          <div id="4" class="col-4 box div1"><img class= "im1" src="public/X.png" ><img class= "im2" src="public/O.png" ></div>
+          <div id="5" class="col-4 box div1"><img class= "im1" src="public/X.png" ><img class= "im2" src="public/O.png" ></div>
+          <div id="6" class="col-4 box div1"><img class= "im1" src="public/X.png" ><img class= "im2" src="public/O.png" ></div>
+          <div id="7" class="col-4 box div1"><img class= "im1" src="public/X.png" ><img class= "im2" src="public/O.png" ></div>
+          <div id="8" class="col-4 box div1"><img class= "im1" src="public/X.png" ><img class= "im2" src="public/O.png" ></div>
+          <div id="9" class="col-4 box div1"><img class= "im1" src="public/X.png" ><img class= "im2" src="public/O.png" ></div>
+        </div>
+      </div>
+      <div class="number">
+        <h3 id = "info"></h3>
+        <h5 id = "show_message"></h5>
+      <div><h5>X Win</h5><input class="show-X" required type="text" placeholder="0" style="width:60px;height:40px;"></div>
+    <div><h5>O Win</h5><input class="show-O" required type="text" placeholder="0" style="width:60px;height:40px;"></div>
+      <div><h5>Draw</h5><input class="show-D" required type="text" placeholder="0" style="width:60px;height:40px;"></div>
+      <button id="start" type="button" style="margin-top: 20px; height:40px; width:120px;" class="btn btn-primary ">New Game</button>
+    </div>
+</div>
+
+    </body>
+</html>
